@@ -1,0 +1,21 @@
+import numpy as np
+
+# Sample data: [bedrooms, square_footage, sale_price]
+house_data = np.array([
+    [5, 2500, 600000],
+    [3, 1800, 350000],
+    [6, 3200, 800000],
+    [4, 2000, 450000],
+    [7, 4000, 1200000]
+])
+
+# Filter houses with more than 4 bedrooms
+houses_with_more_than_4_bedrooms = house_data[house_data[:, 0] > 4]
+
+# Extract their sale prices (3rd column)
+sale_prices = houses_with_more_than_4_bedrooms[:, 2]
+
+# Calculate average sale price
+average_price = np.mean(sale_prices)
+
+print(f"Average sale price of houses with more than 4 bedrooms: ₹{average_price:.2f}")
